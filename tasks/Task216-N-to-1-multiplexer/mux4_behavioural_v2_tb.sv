@@ -1,24 +1,24 @@
-module mux4_behavioural_v2_tb;
+module mux4_behavioural_v2_tb #(parameter N=8);
 
 //Internal signals for testing
 logic y2;
-logic [3:0] x;
-logic [1:0] ss; //2 bit signal
+logic [N-1:0] x;
+logic [$clog2(N)-1:0] ss; //2 bit signal
 
 //Instantiate the component under test
-mux4_behavioural_v2 u1(y2, x, ss);
+muxN #(.N(8)) u1(y2, x, ss);
 
 
 initial
 begin
 	//Unpacked array of expected (correct) outputs. Automatic means this has local scope
-	automatic logic expected[4] = {1'b1, 1'b0, 1'b1, 1'b1};
-
+	automatic logic expected[N] = {1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1};
+        //1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1
 	//Set inputs (note the direction)
-	x = 4'b1101;
+	x = 8'b10101100;
 
 	//Iterate over all input sequences
-	for (int n=0; n<4; n = n + 1) begin
+	for (int n=0; n<N; n = n + 1) begin
 		//Set the select line
 		ss = n;
 

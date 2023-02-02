@@ -11,10 +11,10 @@ mux4_behavioural_v1 u1(y1, aa, bb, cc, dd, ss);
 initial
 begin
 	//Unpacked array of expected (correct) outputs. Automatic means this has local scope
-	automatic logic expected[4] = {1'b1, 1'b0, 1'b1, 1'b1};
+	automatic logic expected[4] = {1'b0, 1'b0, 1'b1, 1'b0};
 
 	//Set inputs
-	{aa, bb, cc, dd} = 4'b1011;
+	{aa, bb, cc, dd} = 4'b0010;
 
 	//Iterate over all input sequences
 	for (int n=0; n<4; n = n + 1) begin
