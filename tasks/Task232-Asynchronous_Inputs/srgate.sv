@@ -14,7 +14,7 @@ begin
 		{Q, Qbar} <= 2'bzz;
 	// No coverage of the input combination 0 0 !!!!
 end
-
+//ljolkjoo
 endmodule
 
 

@@ -1,0 +1,29 @@
+module demux_tb;
+
+
+	logic aa;
+	logic [2:0]sel;
+	logic [7:0]y;
+	logic [3:0]mt;
+
+	{aa,sel} = mt;
+	demux u1 (y,aa,sel);
+
+	initial 
+
+		begin 
+		
+		mt = 0;
+		#50ps assert (y==0) $display("passed %b", mt); else $error("Failed for %b", mt);
+
+
+
+
+
+
+
+
+
+		end
+
+endmodule

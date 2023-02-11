@@ -8,13 +8,14 @@ output logic Cout;
 input logic [N-1:0] A, B;
 input logic Cin;
 
-//output logic [7:4]Sum2; 
-//output logic Cout2;
-//input logic [7:4] A2, B2;
-//input logic Cin2;
+output logic [7:4]Sum2; 
+output logic Cout2;
+input logic [7:4] A2, B2;
+input logic Cin2;
 
 always_comb
 	{Cout, Sum} = A + B + Cin;
-	// Cout = Cin2;
-	//{Cout2, Sum2} = A2 + B2 + Cin2;
+		assign Cout = Cin2;
+always_comb
+	{Cout2, Sum2} = A2 + B2 + Cin2;
 endmodule

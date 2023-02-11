@@ -19,6 +19,7 @@ begin
 			$error("a = %d, expected Y=%d and got %d", n, expected_y[n], y);
 
 		// TODO: Add an assert statement to check the valid output
+		assert (valid == expected_v[n]) $display("V? PASS: a = %2d",n); else $error ("a= %d, expected V=%d and got %d",n,expected_v[n], valid);
 
 	end
 end
