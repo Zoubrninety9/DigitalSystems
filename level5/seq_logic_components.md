@@ -290,7 +290,7 @@ So far, we have considered serial-in-parallel-out and parallel-in-parallel-out. 
 | 3 | Press and release key0 to reset |
 | - | You should see the clock flashing on LED[7] |
 | - | Set the DIL switched to the pattern 1010 |
-| - | When the clock LED goes OFF, press and fold key1 to shift the bits into LED[0] |
+| - | When the clock LED goes OFF, press and hold key1 to shift the bits into LED[0] |
 
 In the schematic you can see a component `p2s`. Double-clicking this will reveal another schematic (shown below). 
 
@@ -464,7 +464,7 @@ module single_port_rom_async
 );
 
 	// Declare the ROM variable
-	reg [DATA_WIDTH-1:0] rom[2**ADDR_WIDTH-1:0] = '{
+	reg [DATA_WIDTH-1:0] rom[0:2**ADDR_WIDTH-1] = '{
 	
 		8'b10101010, 8'b11110000, 8'b00001111, 8'b11001100,
 		8'b11100111, 8'b00011000, 8'b10110111, 8'b11101101
@@ -487,7 +487,7 @@ module single_port_rom_async
 );
 
 	// Declare the ROM variable
-	reg [DATA_WIDTH-1:0] rom[2**ADDR_WIDTH-1:0]; 
+	reg [DATA_WIDTH-1:0] rom[0:2**ADDR_WIDTH-1]; 
 
 	initial
 	begin
