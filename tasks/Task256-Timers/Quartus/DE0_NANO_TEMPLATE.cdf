@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE22F17) Path("C:/Users/user/Documents/GitHub/DigitalSystems/tasks/Task262-BusOutputs/Quartus/") File("DE0_NANO_TEMPLATE.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE22F17) Path("C:/Users/user/Documents/GitHub/DigitalSystems/tasks/Task256-Timers/Quartus/") File("DE0_NANO_TEMPLATE.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

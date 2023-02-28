@@ -16,14 +16,13 @@ always_comb begin : next_state_logic
 
    ST: next_state = HD;
 
-   HD:   if({X,READY} == 2'b11 )
+   HD:   if(X && READY == 1 )
             next_state = DT;
-         else if ({X,READY} == 2'b10)
+         else if (X == 1 && READY == 0)
             next_state = HD;
          else
             next_state = IDLE;
-				
-   DT:  next_state = DT;
+   DT:  next_state = IDLE;
             
    default:
          next_state = IDLE; 
@@ -43,11 +42,11 @@ end
 always_comb begin : output_logic
    //COMPLETE THIS
    case(state)
-   IDLE: {START,RESET,Y} = 3'b010;
-   ST:   {START,RESET,Y} = 3'b100;
-   HD:   {START,RESET,Y} = 3'b0;
-   DT:   {START,RESET,Y} = 3'b001;   
-   default: {START,RESET,Y} = 3'b0;
+   IDLE: RESET = 1;
+   ST:   START = 1;
+   HD:   Y = 0;
+   DT:   Y = 1;   
+   default: Y = 0;
    endcase
 end
 

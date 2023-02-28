@@ -3,12 +3,13 @@ module controller (
    output logic S0,
    output logic S1,
    output logic S2,
+	output logic ENO,
    input logic clk,
    input logic GO,
    input logic reset
 );
 
-   typedef enum {A, B, C, D} state_t;
+   typedef enum {A, B, C, D, E, F} state_t;
    state_t state, next_state;
    
    //Update state
@@ -30,7 +31,9 @@ module controller (
       A: next_state = B;
       B: next_state = C;
       C: next_state = D;
-      D: next_state = (GO == '1) ? A : D;
+      D: next_state = E;
+		E: next_state = (GO == '1)? A : E;
+		//F: next_state = A;
       default: next_state = D;
       endcase
    
@@ -40,14 +43,16 @@ module controller (
    always_comb begin
    
       //Default output
-      {EN, S0, S1, S2} = 4'd0;
+      {EN, S0, S1, S2, ENO} = 4'd0;
       
       //Assert high conditionally
       case (state)
       A: {S0,EN} = 'b11;
       B: {S1,EN} = 'b11;
-      C: {S1,S2,EN} = 'b111;
-      D: ;
+		C: {S1,S2,EN} = 'b111;
+		D: {S1,S2,EN, ENO} = 'b0001;
+		//E: {S1,S2,EN, ENO} = 'b1111;
+		E: ;
       default: ;
       endcase
       

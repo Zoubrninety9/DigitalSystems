@@ -22,6 +22,8 @@ run -all
 quit -f
 
 
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,6 +42,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
 
 
 </modelsim_script_timing>
@@ -560,6 +564,96 @@ SIGNAL("CLK")
 	PARENT = "";
 }
 
+SIGNAL("out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("out[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
+SIGNAL("out[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
+SIGNAL("out[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
+SIGNAL("out[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
+SIGNAL("out[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
+SIGNAL("out[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
+SIGNAL("out[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
+SIGNAL("out[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "out";
+}
+
 TRANSITION_LIST("A[7]")
 {
 	NODE
@@ -971,6 +1065,78 @@ TRANSITION_LIST("CLK")
 			LEVEL 0 FOR 5.0;
 			LEVEL 1 FOR 5.0;
 		}
+	}
+}
+
+TRANSITION_LIST("out[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("out[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("out[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("out[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("out[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("out[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("out[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("out[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -1449,6 +1615,96 @@ DISPLAY_LINE
 	RADIX = Binary;
 	TREE_INDEX = 47;
 	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 48;
+	TREE_LEVEL = 0;
+	CHILDREN = 49, 50, 51, 52, 53, 54, 55, 56;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 49;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 50;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 51;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 52;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 53;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 54;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 55;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "out[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 56;
+	TREE_LEVEL = 1;
+	PARENT = 48;
 }
 
 TIME_BAR

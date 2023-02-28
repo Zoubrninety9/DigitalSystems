@@ -8,6 +8,7 @@
 // does not infer or optimize the logic as a state machine.
 //
 
+
 module led_controller (input logic clk, reset, UP_PULSE, DOWN_PULSE, output logic [7:0] Q);
 
 typedef enum int unsigned { S0 = 32'b00000001, S1 = 32'b00000011, 
@@ -22,19 +23,64 @@ initial begin
 end
 
 always_comb begin : next_state_logic
-	
-	//Default is to stay in the current state
+
 	next_state = state;
-	
-	//Conditionally update state
-	
-	//WRITE NEXT STATE LOGIC HERE HERE
-	
-	// hint - state.next() and state.prev() are useful
-	
-	// See https://www.chipverify.com/systemverilog/systemverilog-enumeration
-		
-	
+
+	case(state)
+
+    S0:    if (UP_PULSE == '1)
+                next_state = state.next();
+
+            else if (DOWN_PULSE == '1)
+                next_state = S0;
+
+
+    S1:    if (UP_PULSE == '1)
+                next_state = state.next();
+
+            else if (DOWN_PULSE == '1)
+                next_state = state.prev();
+
+
+    S2:    if (UP_PULSE == '1)
+                next_state = state.next();
+
+            else if (DOWN_PULSE == '1)
+                next_state = state.prev();
+
+
+
+    S3:    if (UP_PULSE == '1)
+                next_state = state.next();
+
+            else if (DOWN_PULSE == '1)
+                next_state = state.prev();
+
+    S4:    if (UP_PULSE == '1)
+                next_state = state.next();
+
+            else if (DOWN_PULSE == '1)
+                next_state = state.prev();
+
+    S5:    if (UP_PULSE == '1)
+                next_state = state.next();
+
+            else if (DOWN_PULSE == '1)
+                next_state = state.prev();
+
+    S6:    if (UP_PULSE == '1)
+                next_state = state.next();
+
+            else if (DOWN_PULSE == '1)
+                next_state = state.prev();
+
+    S7:    if (UP_PULSE == '1)
+                next_state = state;
+
+            else if (DOWN_PULSE == '1)
+                next_state = state.prev();
+	endcase
+    
 end
 	
 always_ff @(posedge clk or negedge reset) begin
@@ -54,8 +100,3 @@ end
 
 	
 endmodule
-
-
-
-
-

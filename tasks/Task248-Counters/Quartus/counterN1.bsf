@@ -21,43 +21,36 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 184 128)
-	(text "regN" (rect 5 0 25 12)(font "Arial" ))
+	(rect 16 16 200 128)
+	(text "counterN1" (rect 5 0 45 12)(font "Arial" ))
 	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "clk" (rect 0 0 10 12)(font "Arial" ))
-		(text "clk" (rect 21 27 31 39)(font "Arial" ))
+		(text "CLK" (rect 0 0 20 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 41 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "load" (rect 0 0 15 12)(font "Arial" ))
-		(text "load" (rect 21 43 36 55)(font "Arial" ))
+		(text "N_RESET" (rect 0 0 47 12)(font "Arial" ))
+		(text "N_RESET" (rect 21 43 68 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 1))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "reset" (rect 0 0 20 12)(font "Arial" ))
-		(text "reset" (rect 21 59 41 71)(font "Arial" ))
+		(text "DIR" (rect 0 0 17 12)(font "Arial" ))
+		(text "DIR" (rect 21 59 38 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
-		(pt 0 80)
-		(input)
-		(text "d[N-1..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "d[N-1..0]" (rect 21 75 54 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 168 32)
+		(pt 184 32)
 		(output)
-		(text "q[N-1..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "q[N-1..0]" (rect 114 27 147 39)(font "Arial" ))
-		(line (pt 168 32)(pt 152 32)(line_width 3))
+		(text "Y[N-1..0]" (rect 0 0 35 12)(font "Arial" ))
+		(text "Y[N-1..0]" (rect 128 27 163 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
 	)
 	(parameter
 		"N"
@@ -65,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 152 96)(line_width 1))
+		(rectangle (rect 16 16 168 96)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 184 -64 284 16))
+	(annotation_block (parameter)(rect 200 -64 300 16))
 )

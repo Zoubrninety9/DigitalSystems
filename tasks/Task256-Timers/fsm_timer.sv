@@ -1,4 +1,4 @@
-module fsm_timer #(parameter int unsigned N=4) (output logic RDY, input logic CLK, START, N_RESET);
+module fsm_timer #(parameter int unsigned N=8) (output logic RDY, input logic CLK, START, N_RESET);
 
    typedef enum int unsigned {READY='b001, STARTED='b010, STOPPED='b100} state_t;
 

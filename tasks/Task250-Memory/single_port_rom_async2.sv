@@ -13,6 +13,6 @@ module single_port_rom_async2
 		
 		}; /* synthesis romstyle = "M9K" */
 
-	assign q = rom[addr];
+	assign q = rom[(2**ADDR_WIDTH-1) - addr];
 
 endmodule

@@ -1,5 +1,5 @@
 module single_port_rom_async
-#(parameter DATA_WIDTH=8, parameter ADDR_WIDTH=2)
+#(parameter DATA_WIDTH=8, parameter ADDR_WIDTH=3)
 (
 	input [(ADDR_WIDTH-1):0] addr,
 	output reg [(DATA_WIDTH-1):0] q
